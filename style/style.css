@@ -1,0 +1,35 @@
+body {
+  margin: 0;
+  padding: 0;
+  text-align: center;
+}
+
+h1 {
+  font-size: 80px;
+}
+
+#searchForm {
+  padding-top: 5rem;
+}
+
+#searchText {
+  height: 2rem;
+  width: 20rem;
+}
+
+#button {
+  height: 2rem;
+  width: 5rem;
+  border-radius: 10px;
+  color: black;
+  background-color: cyan;
+}
+
+#button:hover {
+  color: white;
+  background-color: darkblue;
+}
+
+h2{
+  font-size: 50px;
+}
