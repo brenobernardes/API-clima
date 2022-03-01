@@ -19,7 +19,9 @@ document.querySelector("#searchForm").addEventListener('submit', async (e) => {
         feelsLike: json.main.feels_like,
         maxTemp: json.main.temp_max,
         minTemp: json.main.temp_min,
-        humidity: json.main.humidity
+        humidity: json.main.humidity,
+        weather: json.weather[0]['main']
+
       });
     } else {
       clearInfo ();
@@ -36,7 +38,7 @@ function clearInput () {
 
 function showInfo (json) {
   error ('');
-  
+
   document.querySelector('#city').innerHTML = `Cidade: ${json.name}`;
   document.querySelector('#country').innerHTML = `País: ${json.country}`;
   document.querySelector('#temp').innerHTML = `Temperatura: ${(json.temp - 273.15).toFixed(1)} °C`;
@@ -45,6 +47,7 @@ function showInfo (json) {
   document.querySelector('#humidity').innerHTML = `Umidade: ${json.humidity} %`;
   document.querySelector('#feelsLike').innerHTML = `Sensação Térmica: ${(json.feelsLike - 273.15).toFixed(1)} °C`;
   document.querySelector('.dataReturn').style.display = 'block';
+  console.log(`${json.weather}`)
 }
 
 function clearInfo () {
